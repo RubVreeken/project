@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Create a quiz</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,33 +12,20 @@
 
 <div class="container">
   <h2>Create a quiz</h2>
-  <form>
+  <form class="form-inline well">
     <div class="form-group">
       <label for="sel1">Category (select one):</label>
       <select class="form-control" id="sel1">
-        <option>1</option>
+        {% for category in Categories %}
+        <option>{{ category }}</option>
         <option>2</option>
         <option>3</option>
         <option>4</option>
+        {% endfor %}
       </select>
       <br>
     </div>
-  </form>
 
-  <form>
-    <div class="form-group">
-      <label for="sel1">Number of questions:</label>
-      <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
-      <br>
-    </div>
-  </form>
-
-  <form>
     <div class="form-group">
       <label for="sel1">Difficulty:</label>
       <select class="form-control" id="sel1">
@@ -48,8 +35,11 @@
       </select>
       <br>
     </div>
-  </form>
-</div>
 
+    <div class="form-group">
+        <input class="form-control" name="questions" placeholder="Number of Questions" type="number" min="1"/>
+    </div>
+</form>
+</div>
 </body>
 </html>

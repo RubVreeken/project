@@ -32,6 +32,8 @@ print(categorie, vraag, goed_antwoord, foute_antwoorden, moeilijkheidsgraad)
 @app.route("/index")
 def index():
 
+    categories = ['Maths', 'History']
+
     if request.method =="POST":
 
         return redirect(url_for("create.html"))
