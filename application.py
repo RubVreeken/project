@@ -29,19 +29,13 @@ for element in range(len(informatie)):
 print(categorie, vraag, goed_antwoord, foute_antwoorden, moeilijkheidsgraad)
 
 
-@app.route("/create")
-def create():
+@app.route("/index")
+def index():
 
     if request.method =="POST":
 
-        return redirect(url_for("index.html"))
+        return redirect(url_for("create.html"))
 
     else:
         # print(categorie)
-        return render_template("create.html", category=categorie)
-
-
-
-
-
-
+        return render_template("index.html", category=categorie, vraag=vraag, goed=goed_antwoord, fout=foute_antwoorden, moeilijkheidsgraad=moeilijkheidsgraad)
